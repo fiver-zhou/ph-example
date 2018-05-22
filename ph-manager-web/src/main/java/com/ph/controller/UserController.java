@@ -29,8 +29,8 @@ public class UserController {
 	}
 	
 	
-	@RequestMapping(value="/load", method={ RequestMethod.GET, RequestMethod.POST })
-	public AjaxObj load() {
-		return new AjaxObj(1, "", "张三四");	
+	@RequestMapping(value="{id}/load", method={ RequestMethod.GET, RequestMethod.POST })
+	public AjaxObj load(@PathVariable String userName) {
+		return new AjaxObj(1, "", "welcome " + userName);	
 	}
 }
